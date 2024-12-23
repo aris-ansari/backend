@@ -36,4 +36,10 @@ app.use(express.static("public"));
 // This is useful for managing sessions, authentication, and tracking user data
 app.use(cookieParser());
 
+// Import routes
+import userRouter from "./routes/user.routes.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 export default app;

@@ -17,7 +17,7 @@
 // Using Promise (active approach) - A more concise way to handle async errors using promises
 const asyncHandler = (fn) => {
   // Return a new function that automatically wraps the provided async function in a promise
-  (req, res, next) => {
+  return (req, res, next) => {
     // `Promise.resolve` ensures that the async function is always wrapped in a promise
     // If the promise rejects, the error is passed to the next middleware (error handling middleware)
     Promise.resolve(fn(req, res, next)).catch((error) => next(error));
