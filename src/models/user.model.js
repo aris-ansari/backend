@@ -59,7 +59,7 @@ userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next(); 
   // If the password field is not modified, skip the hashing process.
 
-  this.password = bcrypt.hash(this.password, 10); 
+  this.password = await bcrypt.hash(this.password, 10); 
   // Hash the password with a salt round of 10 for security.
   next(); // Proceed to save the document.
 });
