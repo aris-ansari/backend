@@ -9,7 +9,7 @@ import app from "./app.js";
 
 // Loading environment variables from a file named `env` in the root directory
 dotenv.config({
-  path: "./env", // Path to the environment file
+  path: "./.env", // Path to the environment file
 });
 
 // Defining the port for the server to listen on, using the `PORT` value from environment variables
